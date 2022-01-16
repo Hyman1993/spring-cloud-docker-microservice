@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<groupId>com.penghuang</groupId>
-	<artifactId>microservice-consumer-movie</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 	<modelVersion>4.0.0</modelVersion>
-
+	<groupId>com.penghuang</groupId>
+	<artifactId>microservice-discovery-eureka-ha</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>microservice-discovery-eureka-ha</name>
+	<description>microservice-discovery-eureka-ha</description>
+	<packaging>jar</packaging>
+	
 	<!-- 引入spring boot的依赖 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,28 +27,15 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
 	</dependencies>
 
 	<!-- 引入spring cloud的依赖 -->
@@ -72,4 +61,3 @@
 	</build>
 
 </project>
-

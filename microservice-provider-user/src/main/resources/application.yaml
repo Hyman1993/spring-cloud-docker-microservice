@@ -18,3 +18,10 @@ logging:                                # 配置日志级别，让hibernate打�
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+    instance:
+      prefer-ip-address: true

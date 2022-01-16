@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: microservice-discovery-eureka-ha
+
+server:
+  port: 8762
+
+eureka:
+  instance:
+    # 当指定profile=peer2时，主机名是peer2
+    hostname: peer2
+  client:
+    registerWithEureka: true # 将该服务自身作为微服务注册到eureka server
+    fetchRegistry: true  # 同步其他eureka server的微服务信息
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/
