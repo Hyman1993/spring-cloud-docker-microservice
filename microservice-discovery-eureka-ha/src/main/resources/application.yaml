@@ -13,4 +13,12 @@ eureka:
     registerWithEureka: true # 将该服务自身作为微服务注册到eureka server
     fetchRegistry: true  # 同步其他eureka server的微服务信息
     serviceUrl:
-      defaultZone: http://peer1:8761/eureka/
+      defaultZone: http://user:password123@peer1:8761/eureka/
+
+# spring security configuration
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: password123
