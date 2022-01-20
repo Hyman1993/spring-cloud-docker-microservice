@@ -37,6 +37,7 @@ public class MovieController {
     }
 
     @GetMapping("/log-user-instance")
+    @HystrixCommand(fallbackMethod = "logUserInstanceFallback")
     public void logUserInstance() {
         ServiceInstance serviceInstance = this.loadBalancerClient.choose("" +
                 "microservice-provider-user");
@@ -45,6 +46,10 @@ public class MovieController {
                 serviceInstance.getHost(), serviceInstance.getPort());
     }
 
+
+    public void logUserInstanceFallback() {
+        MovieController.LOGGER.info("logUserInstanceFallback.....");
+    }
 
     public UserDto findByIdFallback(Long id, Throwable throwable) {
         LOGGER.info("进入回退方法,异常:" + throwable);
