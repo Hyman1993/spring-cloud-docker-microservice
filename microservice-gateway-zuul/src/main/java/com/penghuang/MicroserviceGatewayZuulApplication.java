@@ -2,12 +2,14 @@ package com.penghuang;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
-public class MicroserviceProviderUserApplication {
+@EnableZuulProxy
+public class MicroserviceGatewayZuulApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicroserviceProviderUserApplication.class, args);
+		SpringApplication.run(MicroserviceGatewayZuulApplication.class, args);
 	}
 
 }
