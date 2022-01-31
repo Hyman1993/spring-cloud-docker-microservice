@@ -1,0 +1,11 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: microservice-gateway-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password123@eureka01:8761/eureka/,http://user:password123@eureka02:8762/eureka/
