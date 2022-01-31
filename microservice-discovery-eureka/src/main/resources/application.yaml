@@ -8,13 +8,13 @@ spring:
 # eureka configuration
 eureka:
   instance:
-    # 当指定profile=peer1时，主机名是peer1
-    hostname: peer1
+    # 当指定profile=eureka01，主机名是eureka01
+    hostname: eureka01
   client:
     registerWithEureka: true # 将该服务自身作为微服务注册到eureka server
     fetchRegistry: true  # 同步其他eureka server的微服务信息
     serviceUrl:
-      defaultZone: http://user:password123@peer2:8762/eureka/
+      defaultZone: http://user:password123@eureka01:8761/eureka/,http://user:password123@eureka02:8762/eureka/
 
 # spring security configuration
 security:
